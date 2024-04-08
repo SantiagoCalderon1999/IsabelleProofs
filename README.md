@@ -10,4 +10,4 @@ Before you can start working with the proofs in this repository, you need to ins
 
 ## Proofs in this Repository
 
-Our repository contains a diverse array of proofs, each covering a wide range of topics. Each proof is self-contained in its own file and includes comments to explain the proof process. This structure allows for easy understanding and navigation.
+This repository contains a diverse array of proofs, each covering a wide range of topics. Each proof is self-contained in its own file and includes comments to explain the proof process. This structure allows for easy understanding and navigation.
