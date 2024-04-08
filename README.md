@@ -16,4 +16,4 @@ Here you can find proofs in:
 
 - [Data Structures](/DataStructures/): Fairly straightforward set of theorems and definitions that prove theorems related to Data Structures like Lists and Trees, and subsets of them like Binary Search Trees.
 
-- [Real Analysis](/Analysis-I/): Set of theorems proved based on learnings from Terence Tao's [Analysis I](https://link.springer.com/book/10.1007/978-981-10-1789-6) book.
+- [Real Analysis](/RealAnalysis/): Set of theorems proved based on learnings from Terence Tao's [Analysis I](https://link.springer.com/book/10.1007/978-981-10-1789-6) book.
