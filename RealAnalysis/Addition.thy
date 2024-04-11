@@ -104,5 +104,42 @@ next
     .
 qed
 
+text \<open>Addition is associative\<close>
+lemma "Sum (Sum a  b) c = Sum a  (Sum b c)"
+proof(induction a)
+  case 0
+
+  have 1: "Sum (Sum 0 b) c = Sum b c"
+    apply(subst Sum.simps(1))
+    ..
+  
+  also have 2: "... = Sum 0 (Sum b c)"
+    using Sum.simps(1)[symmetric]
+    .
+
+  finally show ?case
+    .
+next
+  case (Suc a)
+
+  have 1: "Sum (Sum (Suc a) b) c = Sum (Suc (Sum a b)) c"
+    apply(subst Sum.simps(2))
+    ..
+
+  also have 2: "... = Suc(Sum (Sum a b) c)"
+    apply(subst Sum.simps(2))
+    ..
+
+  also have 3: "... = Suc (Sum a (Sum b c))"
+    apply(subst Suc.IH[symmetric])
+    ..
+
+  also have 4: "... = Sum (Suc a) (Sum b c)"
+    apply(subst Sum.simps(2)[symmetric])
+    ..
+
+  finally show ?case
+    .
+qed
 
 end
