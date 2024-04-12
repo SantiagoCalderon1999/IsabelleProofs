@@ -142,4 +142,52 @@ next
     .
 qed
 
+text \<open>Cancellation law\<close>
+lemma "Sum a b = Sum a c \<Longrightarrow> b = c"
+proof(induction a)
+  case 0
+
+  have 1: "b = Sum 0 b"
+    using Sum.simps(1)[symmetric]
+    .
+
+  also have 2: "... = Sum 0 c"
+    using "0.prems"
+    .
+
+  also have 3: "... = c"
+    using Sum.simps(1)
+    .
+
+  finally show ?case
+    .
+
+next
+  case (Suc a)
+
+  have 1: "Suc(Sum a b) = Sum (Suc a) b"
+    using Sum.simps(2)[symmetric]
+    .
+
+  also have 2: "... = Sum (Suc a) c"
+    using Suc.prems
+    .
+
+  also have 3: "... = Suc(Sum a c)"
+    using Sum.simps(2)
+    .
+
+  finally have 4: "Suc(Sum a b) = Suc(Sum a c)"
+    .
+
+  have 5: "Sum a b = Sum a c"
+    using Nat.Suc_inject 4
+    .
+    
+  show ?case
+    using Suc.IH 5
+    .
+    
+qed
+
 end
